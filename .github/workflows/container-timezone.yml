@@ -1,0 +1,26 @@
+name: Container timezone
+
+on:
+  push:
+
+jobs:
+  set-timezone-in-container:
+    runs-on: ubuntu-latest
+
+    container:
+      image: ubuntu:22.04
+
+    steps:
+      - name: Show datetime
+        run: |
+          date "+%Y/%m/%d %H:%M:%S"
+
+      - name: Show datetime with TZ env from workflow
+        run: |
+          date "+%Y/%m/%d %H:%M:%S"
+        env:
+          TZ: Asia/Tokyo
+
+      - name: Show datetime with TZ env from command line
+        run: |
+          TZ=Asia/Tokyo date "+%Y/%m/%d %H:%M:%S"
