@@ -11,6 +11,11 @@ jobs:
       image: ubuntu:22.04
 
     steps:
+      - name: Install tzdata
+        run: |
+          apt-get update
+          apt-get install -y tzdata
+
       - name: Show datetime
         run: |
           date "+%Y/%m/%d %H:%M:%S"
