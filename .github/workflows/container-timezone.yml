@@ -2,6 +2,8 @@ name: Container timezone
 
 on:
   push:
+    paths:
+      - ".github/workflows/container-timezone.yml"
 
 env:
   TZ: Asia/Tokyo
