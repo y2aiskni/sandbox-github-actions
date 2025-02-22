@@ -3,6 +3,9 @@ name: Container timezone
 on:
   push:
 
+env:
+  TZ: Asia/Tokyo
+
 jobs:
   set-timezone-in-container:
     runs-on: ubuntu-latest
