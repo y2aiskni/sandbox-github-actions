@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - ".github/workflows/container-timezone.yml"
+  workflow_dispatch:
 
 env:
   TZ: Asia/Tokyo
