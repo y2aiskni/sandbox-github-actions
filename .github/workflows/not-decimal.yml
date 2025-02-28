@@ -1,0 +1,43 @@
+name: Not decimal
+
+on:
+  workflow_dispatch:
+
+jobs:
+  decimal:
+    runs-on: ubuntu-latest
+
+    env:
+      job_value: 1.20
+      job_value_string: "1.20"
+
+    steps:
+      - name: test 1
+        run: |
+          echo ${{ env.value }}
+        env:
+          value: 1.20
+
+      - name: test 2
+        run: |
+          echo ${{ env.value }}
+        env:
+          value: "1.20"
+
+      - name: test 3
+        run: |
+          echo ${{ env.value }}
+        env:
+          value: "${{ env.job_value }}"
+
+      - name: test 4
+        run: |
+          echo ${{ env.value }}
+        env:
+          value: ${{ env.job_value_string }}
+
+      - name: test 5
+        run: |
+          echo ${{ env.value }}
+        env:
+          value: "${{ env.job_value_string }}"
