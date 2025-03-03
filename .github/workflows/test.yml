@@ -28,3 +28,7 @@ jobs:
       - name: test3
         run: |
           echo world
+
+      - name: test4
+        run: |
+          echo world
