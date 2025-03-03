@@ -23,3 +23,7 @@ jobs:
       - name: test2
         run: |
           echo world
+
+      - name: test3
+        run: |
+          echo world
