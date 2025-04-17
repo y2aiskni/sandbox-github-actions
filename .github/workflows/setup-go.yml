@@ -1,0 +1,28 @@
+name: test setup-go version by go.mod file
+
+on:
+  workflow_dispatch:
+
+env:
+  TZ: Asia/Tokyo
+
+jobs:
+  non-toolchain:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: "golang1/go.mod"
+
+  toolchain:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: "golang2/go.mod"
